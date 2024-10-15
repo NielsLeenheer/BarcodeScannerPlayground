@@ -2,6 +2,10 @@
 
 Playground app for the @point-of-sale/ barcode scanner libraries
 
+Try it out at: https://point-of-sale.dev/barcode-scanner/playground/
+
+
+
 <br>
 
 -----
