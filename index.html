@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>@point-of-sale/barcode-scanner playground</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script type="importmap">
+      {
+        "imports": {
+          "@point-of-sale/keyboard-barcode-scanner": "https://cdn.jsdelivr.net/gh/NielsLeenheer/KeyboardBarcodeScanner@main/dist/keyboard-barcode-scanner.esm.js",
+          "@point-of-sale/webhid-barcode-scanner": "https://cdn.jsdelivr.net/gh/NielsLeenheer/WebHIDBarcodeScanner@master/dist/webhid-barcode-scanner.esm.js",
+          "@point-of-sale/webserial-barcode-scanner": "https://cdn.jsdelivr.net/gh/NielsLeenheer/WebSerialBarcodeScanner@main/dist/webserial-barcode-scanner.esm.js",
+          "@point-of-sale/webcam-barcode-scanner": "https://cdn.jsdelivr.net/gh/NielsLeenheer/WebcamBarcodeScanner@main/dist/webcam-barcode-scanner.esm.js"
+        }
+      }
+    </script>
+  </head>
+  
+  <body id="app">
+    <script type="module" src="src/main.js"></script>
+  </body>
+</html>

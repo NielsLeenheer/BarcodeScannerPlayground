@@ -1,0 +1,26 @@
+{
+  "name": "barcode-scanner-playground",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "link": "npm link @point-of-sale/webcam-barcode-scanner @point-of-sale/keyboard-barcode-scanner @point-of-sale/webhid-barcode-scanner @point-of-sale/webserial-barcode-scanner"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^3.1.2",
+    "svelte": "^4.2.19",
+    "svelte-icon": "^2.1.1",
+    "vite": "^5.4.8"
+  },
+  "dependencies": {
+    "@point-of-sale/keyboard-barcode-scanner": "^1.0.0",
+    "@point-of-sale/webcam-barcode-scanner": "^1.0.1",
+    "@point-of-sale/webhid-barcode-scanner": "^1.1.0",
+    "@point-of-sale/webserial-barcode-scanner": "^1.1.0",
+    "bcbp": "^6.0.2",
+    "verhoeff": "^0.0.5"
+  }
+}
