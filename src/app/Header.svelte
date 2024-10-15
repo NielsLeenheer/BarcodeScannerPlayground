@@ -16,8 +16,22 @@
         ( driver === 'hid' && 'hid' in navigator ) ||
         ( driver === 'serial' && 'serial' in navigator );
 
-
     const dispatch = createEventDispatcher();
+
+
+    /* Retrieve and save state */
+  
+    let value = localStorage.getItem('barcode-driver');
+
+    if (value) {
+        driver = value;
+    }
+
+    window.addEventListener('beforeunload', () => {
+        if (driver) {
+            localStorage.setItem('barcode-driver', driver);
+        }
+    });
 
 </script>
 
