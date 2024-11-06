@@ -2,7 +2,7 @@
 
     let { symbology = '', value = '' } = $props();
 
-    let failed = false;
+    let failed = $state(false);
 
     let symbologies = {
         'upca': 'upca',
@@ -45,13 +45,19 @@
         parameters.height = '16';
     }
 
-    let src = 'https://bwipjs-api.metafloor.com/?' + new URLSearchParams(parameters).toString();
+    let src = $state();
+    
+    if (symbologies[symbology]) {
+        src = 'https://bwipjs-api.metafloor.com/?' + new URLSearchParams(parameters).toString();
+    } else {
+        console.log('Trying to render unknown symbology for Bwipjs', symbology);
+    }
 
 </script>
 
 <div class='preview'>
-    {#if !failed}
-        <img {src} alt='' on:error={() => {failed = true}}>
+    {#if symbology && symbology !== 'unknown' && src && !failed}
+        <img {src} alt='' onerror={() => {failed = true}}>
     {/if}
 </div>
 
