@@ -19,15 +19,25 @@
 
     /* Retrieve and save state */
   
-    let value = localStorage.getItem('barcode-driver');
+    let driverValue = localStorage.getItem('barcode-driver');
 
-    if (value) {
-        driver = value;
+    if (driverValue) {
+        driver = driverValue;
+    }
+
+    let baudrateValue = localStorage.getItem('barcode-baudrate');
+
+    if (baudrateValue) {
+        baudrate = baudrateValue;
     }
 
     window.addEventListener('beforeunload', () => {
         if (driver) {
             localStorage.setItem('barcode-driver', driver);
+        }
+
+        if (baudrate) {
+            localStorage.setItem('barcode-baudrate', baudrate);
         }
     });
 
