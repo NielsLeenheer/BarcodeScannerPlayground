@@ -23,7 +23,7 @@
 
 <div class="barcode">
     <div class="result">
-        <p class='symbology' data-id={id} data-type={symbology}>{symbology}</p>
+        <p class='symbology' data-id={id} data-type={symbology} data-guess={guess}>{symbology}</p>
         <p class='value'>{@html barcode}</p>
 
         <Details {value} />
@@ -89,6 +89,18 @@
     }
     .barcode .result .symbology[data-type="unknown"] {
         background-color: #888;
+    }
+    .barcode .result .symbology[data-guess="true"] {
+        background-color: #888;
+    }
+
+    .barcode .result .symbology[data-guess="true"]::after {
+        content: '?';
+        position: absolute;
+        margin-left: 0.6em;
+        margin-top: -0.25em;
+        color: #ccc;
+        font-size: 1.6em;
     }
 
     .barcode .result .value {
