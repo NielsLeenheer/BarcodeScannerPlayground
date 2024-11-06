@@ -19,9 +19,6 @@
         .map((c) => `<span class='char ${c === ' ' ? 'space' : ''}'>${c}</span>`)
         .join('');
 
-    let raw = value.split('')
-        .map((c) => c.charCodeAt(0))
-
 </script>
 
 <div class="barcode">
@@ -35,12 +32,10 @@
     <Preview symbology={symbology} value={value} />
 
     <div class='hexdump'>
-        {#if reports.length}
-            {#each reports as report}
-                <Hexdump data={report} />
+        {#if bytes.length}
+            {#each bytes as row}
+                <Hexdump bytes={row} />
             {/each}
-        {:else}
-            <Hexdump data={raw} />
         {/if}
     </div>
 </div>
