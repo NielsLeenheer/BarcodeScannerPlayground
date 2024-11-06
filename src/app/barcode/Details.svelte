@@ -12,10 +12,12 @@
     import matter from '../../utils/parse-matter-qrcode.js';
     import wifi from '../../utils/parse-wifi-qrcode.js';
 
+    let { 
+        value,
+        data = {}
+    } = $props();
 
-    export let value;
-
-    let type;
+    let type = $state();
 
     if (boardingpass.is(value)) {
         type = 'boardingpass';

@@ -12,14 +12,15 @@
   /* State */
 
   let barcodeScanner;
-  let connected = false;
   let output;
+  
+  let connected = $state(false);
 
 
   /* Functions */
 
   function connect(event) {
-    let { driver, baudrate } = event.detail;
+    let { driver, baudrate } = event;
 
     /* Setup driver */
 
@@ -76,7 +77,7 @@
 
 </script>
 
-<Header {connected} on:connect={connect} on:disconnect={disconnect} />
+<Header {connected} {connect} {disconnect} />
 
 <div id="content">
     <Output bind:this={output} />

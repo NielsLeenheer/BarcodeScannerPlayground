@@ -4,11 +4,16 @@
     import Details from "./Details.svelte";
     import Hexdump from "../../components/Hexdump.svelte";
 
-    export let id;
-    export let symbology = 'unknown';
-    export let value = '';
-    export let reports = [];
-
+    let { 
+        id,
+        symbology = 'unknown',
+        aim = '',
+        value = '',
+        bytes = [],
+        data = null,
+        debug = null,
+        guess = false
+    } = $props();
 
     let barcode = value.split('')
         .map((c) => `<span class='char ${c === ' ' ? 'space' : ''}'>${c}</span>`)

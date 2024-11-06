@@ -1,11 +1,11 @@
 <script>
 
-    export let type = '';
+    let { children, type = '' } = $props();
 
 </script>
 
 <div class='card {type}'>
-    <slot />
+    {@render children?.()}
 </div>
 
 <style>

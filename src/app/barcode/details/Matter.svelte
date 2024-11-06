@@ -3,7 +3,7 @@
     import Card from '../../../components/Card.svelte';
     import matter from '../../../utils/parse-matter-qrcode.js';
 
-    export let value;
+    let { value } = $props();
 
     let result = matter.parse(value);
 

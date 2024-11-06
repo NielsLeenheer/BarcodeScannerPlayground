@@ -3,7 +3,7 @@
     import Card from '../../../components/Card.svelte';
     import homekit from '../../../utils/parse-homekit-qrcode.js';
 
-    export let value;
+    let { value } = $props();
 
     let result = homekit.parse(value);
 

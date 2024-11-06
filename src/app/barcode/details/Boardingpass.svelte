@@ -2,7 +2,7 @@
 
     import boardingpass from '../../../utils/parse-boardingpass.js';
 
-    export let value;
+    let { value } = $props();
 
     let result = boardingpass.parse(value);
 

@@ -3,7 +3,7 @@
     import Card from '../../../components/Card.svelte';
     import wifi from '../../../utils/parse-wifi-qrcode.js';
 
-    export let value;
+    let { value } = $props();
 
     let result = wifi.parse(value);
 

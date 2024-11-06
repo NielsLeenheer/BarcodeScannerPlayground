@@ -10,16 +10,16 @@
     "link": "npm link @point-of-sale/webcam-barcode-scanner @point-of-sale/keyboard-barcode-scanner @point-of-sale/webhid-barcode-scanner @point-of-sale/webserial-barcode-scanner"
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^3.1.2",
-    "svelte": "^4.2.19",
+    "@sveltejs/vite-plugin-svelte": "^4.0.0",
+    "svelte": "^5.1.10",
     "svelte-icon": "^2.1.1",
-    "vite": "^5.4.8"
+    "vite": "^5.4.10"
   },
   "dependencies": {
-    "@point-of-sale/keyboard-barcode-scanner": "^1.0.0",
-    "@point-of-sale/webcam-barcode-scanner": "^1.0.1",
-    "@point-of-sale/webhid-barcode-scanner": "^1.1.0",
-    "@point-of-sale/webserial-barcode-scanner": "^1.1.0",
+    "@point-of-sale/keyboard-barcode-scanner": "^1.1.0",
+    "@point-of-sale/webcam-barcode-scanner": "^2.0.1",
+    "@point-of-sale/webhid-barcode-scanner": "^1.2.0",
+    "@point-of-sale/webserial-barcode-scanner": "^1.2.0",
     "bcbp": "^6.0.2",
     "verhoeff": "^0.0.5"
   }

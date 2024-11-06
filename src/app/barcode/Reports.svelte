@@ -2,7 +2,7 @@
 
     import Hexdump from '../../components/Hexdump.svelte';
 
-    export let reports = [];
+    let { reports = [] } = $props();
 
 </script>
 

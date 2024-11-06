@@ -1,22 +1,20 @@
 <script>
 
-    import { createEventDispatcher } from 'svelte';
     import { Icon } from 'svelte-icon';
     import connectIcon from '../assets/icons/connect.svg?raw';
     import disconnectIcon from '../assets/icons/disconnect.svg?raw';
 
-    export let connected;
+    let { connected, connect, disconnect } = $props();
 
-    let driver = 'webcam';
-    let baudrate = '9600';
-    let supported;
+    let driver = $state('webcam');
+    let baudrate = $state('9600');
 
-    $: supported = 
-        driver === 'keyboard' || driver === 'webcam' || 
+    let supported = $derived(
+        ( driver === 'keyboard' ) || 
+        ( driver === 'webcam' ) || 
         ( driver === 'hid' && 'hid' in navigator ) ||
-        ( driver === 'serial' && 'serial' in navigator );
-
-    const dispatch = createEventDispatcher();
+        ( driver === 'serial' && 'serial' in navigator )
+    );
 
 
     /* Retrieve and save state */
@@ -52,12 +50,12 @@
     {/if}
 
     {#if !connected}
-      <button id="connect" on:click={() => dispatch('connect', { driver, baudrate })} disabled={!supported}>
+      <button id="connect" onclick={() => connect({ driver, baudrate })} disabled={!supported}>
           <Icon data={connectIcon} />
           Connect
       </button>
     {:else}
-      <button id="disconnect" on:click={() => dispatch('disconnect')}>
+      <button id="disconnect" onclick={() => disconnect()}>
           <Icon data={disconnectIcon} />
           Disconnect
       </button>

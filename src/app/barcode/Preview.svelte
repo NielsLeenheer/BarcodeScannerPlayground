@@ -1,7 +1,6 @@
 <script>
 
-    export let symbology = '';
-    export let value = '';
+    let { symbology = '', value = '' } = $props();
 
     let failed = false;
 
