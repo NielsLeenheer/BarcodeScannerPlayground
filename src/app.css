@@ -54,6 +54,7 @@ button:disabled {
 button svg {
   height: 75%;
   margin-right: 3px;
+  stroke-width: 0;
 }
 
 button:disabled svg {
