@@ -44,7 +44,7 @@
 </script>
 
 <header>
-    <select id="driver" bind:value={driver}>
+    <select id="driver" bind:value={driver} disabled={!!connected}>
         <option value="webcam">Webcam</option>
         <option value="hid">HID</option>
         <option value="serial">Serial</option>
@@ -52,7 +52,7 @@
     </select>
 
     {#if driver === 'serial'}
-      <select id="baudrate" bind:value={baudrate}>
+      <select id="baudrate" bind:value={baudrate} disabled={!!connected}>
           <option value="9600">9600</option>
           <option value="38400">38400</option>
           <option value="115200">115200</option>
