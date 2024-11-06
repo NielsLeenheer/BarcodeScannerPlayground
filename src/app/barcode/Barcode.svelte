@@ -26,7 +26,7 @@
         <p class='symbology' data-id={id} data-type={symbology} data-guess={guess}>{symbology}</p>
         <p class='value'>{@html barcode}</p>
 
-        <Details {value} />
+        <Details {value} {data} />
     </div>
 
     <Preview symbology={symbology} value={value} />

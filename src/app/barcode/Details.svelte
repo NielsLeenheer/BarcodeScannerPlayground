@@ -1,13 +1,12 @@
 <script>
 
     import Boardingpass from "./details/Boardingpass.svelte";
-    import GS1DigitalLink from "./details/GS1DigitalLink.svelte";
+    import GS1 from "./details/GS1.svelte";
     import HomeKit from "./details/HomeKit.svelte";
     import Matter from "./details/Matter.svelte";
     import Wifi from "./details/Wifi.svelte";
 
     import boardingpass from '../../utils/parse-boardingpass.js';
-    import gs1digitallink from '../../utils/parse-gs1-digital-link.js';
     import homekit from '../../utils/parse-homekit-qrcode.js';
     import matter from '../../utils/parse-matter-qrcode.js';
     import wifi from '../../utils/parse-wifi-qrcode.js';
@@ -19,14 +18,15 @@
 
     let type = $state();
 
+
+    if (data?.elements) {
+        type = 'gs1';
+    }
+
     if (boardingpass.is(value)) {
         type = 'boardingpass';
     } 
     
-    if (gs1digitallink.is(value)) {
-        type = 'gs1digitallink';
-    }
-
     if (homekit.is(value)) {
         type = 'homekit';
     } 
@@ -59,6 +59,6 @@
     <Matter {value} />
 {/if}
 
-{#if type === 'gs1digitallink'}
-    <GS1DigitalLink {value} />
+{#if type === 'gs1'}
+    <GS1 {value} elements={data.elements} />
 {/if}
