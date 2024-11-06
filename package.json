@@ -16,10 +16,10 @@
     "vite": "^5.4.10"
   },
   "dependencies": {
-    "@point-of-sale/keyboard-barcode-scanner": "^1.1.0",
-    "@point-of-sale/webcam-barcode-scanner": "^2.0.1",
-    "@point-of-sale/webhid-barcode-scanner": "^1.2.0",
-    "@point-of-sale/webserial-barcode-scanner": "^1.2.0",
+    "@point-of-sale/keyboard-barcode-scanner": "^1.1.1",
+    "@point-of-sale/webcam-barcode-scanner": "^2.0.2",
+    "@point-of-sale/webhid-barcode-scanner": "^1.2.1",
+    "@point-of-sale/webserial-barcode-scanner": "^1.2.1",
     "bcbp": "^6.0.2",
     "verhoeff": "^0.0.5"
   }
