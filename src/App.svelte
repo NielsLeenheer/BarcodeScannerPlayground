@@ -37,7 +37,7 @@
 
     if (driver === 'webcam') {
         barcodeScanner = new WebcamBarcodeScanner({ 
-            useFallback: true,
+            // useFallback: true,
 
             preview: {
                 draggable: true,
