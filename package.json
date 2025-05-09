@@ -4,16 +4,17 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview",
     "link": "npm link @point-of-sale/webcam-barcode-scanner @point-of-sale/keyboard-barcode-scanner @point-of-sale/webhid-barcode-scanner @point-of-sale/webserial-barcode-scanner"
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^4.0.0",
-    "svelte": "^5.1.10",
+    "@sveltejs/vite-plugin-svelte": "^5.0.3",
+    "@vitejs/plugin-basic-ssl": "^2.0.0",
+    "svelte": "^5.28.2",
     "svelte-icon": "^2.1.1",
-    "vite": "^5.4.10"
+    "vite": "^6.3.4"
   },
   "dependencies": {
     "@point-of-sale/keyboard-barcode-scanner": "^1.1.1",

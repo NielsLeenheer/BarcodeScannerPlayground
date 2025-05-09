@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import { svelte } from '@sveltejs/vite-plugin-svelte'
+import basicSsl from '@vitejs/plugin-basic-ssl'
 
 let external = [
   '@point-of-sale/keyboard-barcode-scanner', '@point-of-sale/webhid-barcode-scanner',
@@ -10,7 +11,7 @@ export default defineConfig({
   base: "./",
 
   plugins: [
-    svelte()
+    basicSsl(), svelte()
   ],
 
   server: {
