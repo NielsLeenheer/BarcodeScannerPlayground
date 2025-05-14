@@ -6,6 +6,7 @@
 
     let { 
         id,
+        type,
         symbology = 'unknown',
         aim = '',
         value = '',

@@ -1,18 +1,24 @@
 <script>
 
     import Barcode from "./barcode/Barcode.svelte";
+    import Debug from "./barcode/Debug.svelte";
 
-    let barcodes = [];
+    let items = [];
 
     export const render = data => {
-        barcodes = [ { id: barcodes.length, ...data }, ...barcodes ];
+        items = [ { id: items.length, ...data }, ...items ];
     }
 
 </script>
 
 <div id="output">
-    {#each barcodes as barcode (barcode.id)}
-        <Barcode {...barcode} />
+    {#each items as item (item.id)}
+        {#if item.type === 'barcode'}
+            <Barcode {...item} />
+        {/if}
+        {#if item.type === 'debug'}
+            <Debug {...item} />
+        {/if}
     {/each}
 </div>
 

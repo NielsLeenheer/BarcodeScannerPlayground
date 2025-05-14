@@ -52,7 +52,10 @@
     }
 
     if (driver === 'keyboard') {
-        barcodeScanner = new KeyboardBarcodeScanner({ guessSymbology: true });
+        barcodeScanner = new KeyboardBarcodeScanner({ 
+            debug: true,
+            guessSymbology: true 
+        });
     }
 
     /* Event listeners */
@@ -62,7 +65,11 @@
     });
 
     barcodeScanner.addEventListener('barcode', data => {
-        output.render(data)
+        output.render({ type: 'barcode', ...data })
+    });
+
+    barcodeScanner.addEventListener('debug', data => {
+        output.render({ type: 'debug', ...data })
     });
 
     /* Connect */
